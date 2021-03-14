@@ -1,9 +1,15 @@
 <template>
   <div class="home-page container">
     <div class="row">
-      <div class="card-columns">
-        <div class="row">
-          <Blog v-for="blogData in state.blogs" :key="blogData._id" :blog="blogData" />
+      <div class="col-12 text-center">
+        <h1>Bloggery Now!</h1>
+      </div>
+
+      <div class="row">
+        <div class="card-columns">
+          <div class="row">
+            <Blog v-for="blogData in state.blogs" :key="blogData._id" :blog="blogData" />
+          </div>
         </div>
       </div>
     </div>

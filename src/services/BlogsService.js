@@ -12,5 +12,16 @@ class BlogsService {
       logger.log(error)
     }
   }
+
+  async createBlog(newBlog) {
+    try {
+      const res = await sandboxApi.post('api/blogs', newBlog)
+      AppState.blogs.push(res.data)
+      logger.log(res.data)
+      this.getBlogs()
+    } catch (error) {
+      logger.error(error)
+    }
+  }
 }
 export const blogsService = new BlogsService()
